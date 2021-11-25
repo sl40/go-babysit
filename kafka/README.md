@@ -1,16 +1,4 @@
----
-title: go kafka入门教程，使用docker启动kafka本地环境
-date: 2020-04-07 13:17:49
-categories: 代码
-summary: go使用kafka-go生产和消费教程，包含本地测试环境启动docker-compose
-tags:
-- kafka
-- docker
-- go
-  top: true
-  img: http://shensuanhuicdn.feelinging.com/blogblog_bg7.jpg
-  keyword: go kafka kafka-go
----
+# go kafka入门教程，docker kafka本地环境搭建
 在本文中，您将学习：
 
 * 使用docker启动本地环境kafka
@@ -82,7 +70,7 @@ twe
 three
 ~~~
 查看消费者窗口，会显示生产者发送的消息。恭喜你，本地环境搭建完成！
-
+![](https://sl40.oss-cn-hangzhou.aliyuncs.com/blog/kafak_client.png)
 下面将演示go如何链接kafka并且生产和消费消息
 
 ## Go生产者代码
@@ -171,7 +159,7 @@ func main() {
 ~~~
 go mod download
 ~~~
-在consumer目录下先运行消费者
+在consumer目录下运行消费者
 ~~~ shell
 go run mian.go
 message at topic/partition/offset test/0/18: Key-A = Hello World!
@@ -180,7 +168,7 @@ message at topic/partition/offset test/0/20: Key-C = Two!
 
 ~~~
 在producer目录下运行生产者
-~~~
+~~~ shell
 go run mian.go
 ~~~
 消费者窗口会打印结果，恭喜你使用go完成了kafka最基础的操作！
